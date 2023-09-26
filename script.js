@@ -10,7 +10,10 @@ var question1 = {
     questionText: "What color is the sky?",
     choices:["blue","red","green","purple"],
 }
-
+var question2 = {
+    questionText: "Who is Ernie's best friend?",
+    choices:["Big-Bird","Elmo","Bert","Oscar"],
+}
 
 //click a button to hide the start screen
 function startQuiz() {
@@ -18,32 +21,31 @@ function startQuiz() {
     questionPage.style.display = "block";
     //select currentQuestion header and update content with current question
     currentQuestion.textContent = question1.questionText;
+
+    //select ul with id of choices
+    //create 4 buttons with textcontent and value?? of the answer choices
     for (var i = 0; i < question1.choices.length; i++) {
         var ansButton = document.createElement("button");
         ansButton.textContent = question1.choices[i];
         answerChoices.append(ansButton);
+        
     };
-        //create a button for the choice
-        //add content
-        //append to the button container
+    //clear the buttons before the next question??
     
-        //then clear the buttons before the next question
-    // }
+    questionPage.addEventListener("click", function(event) {
+        var element = event.target;
+
+        if (element.matches("button")) {
+            //get value of the button they clicked
+            //if (value === true) { go to next question}
+            //else {subtract 10 from the timer, go to next question}
+        }
+    })
+        
+    
 }
 
 startButton.addEventListener("click", startQuiz)
 
-//select ul with id of choices
-//create 4 buttons with textcontent and value of the answer choices
 
-// var choices = ["apple", "kiwi", "banana", "peach"]
-// for (let i = 0; i < choices.length; index++) {
-    //create a button for the choice
-    //add content
-    //append to the button container
 
-    //then clear the buttons before the next question
-// }
-
-//big hint = custom data attributes activity(#19) for adding the event listener to the container
-//and then only care if element.matches("button")
