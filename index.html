@@ -3,24 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Code Quiz</title>
 </head>
 <body>
     <header>
-        <h2>view highscores</21>
-        <p></p>
-        <div>Timer</div>
+        <h3>View High Scores</h3>
+        <div id="timer">
+            <h3>Time remaining: </h3> 
+            <div id="timer-count">100</div>
+        </div>    
     </header>
-    <section id = "start-section">
-        <h1>Quiz Title</h1>
 
-
+    <section id = "starting-page">
+        <h1>Coding Quiz</h1>
+        <p>Answer questions to show what you know!</p>
+        <button id="start-button">Start Quiz</button> 
     </section>
-    <ul id="choices">
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-    </ul>
+
+    <section id="question-page">
+        <h2></h2>
+        <ul id="answer-choices">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </ul>
+    </section>
+
+    <section id="end-page">
+        <h2>Done!</h2>
+        <p></p>
+        <form>
+            <label>Enter Initials:</label>
+            <input type="text" id="initials">
+            <input type="submit" id="submit" value="submit">
+        </form>
+    </section>
+
+    <section id="high-score-page">
+        <h2>High Scores</h2>
+        <ol id="scores-list"></ol>
+        <button id="back-button">Go Back</button>
+        <button id="clear-button">Clear Scores</button>
+    </section>
+    
+    <script src="./script.js"></script>
 </body>
 </html>
