@@ -4,13 +4,11 @@ var questionPage = document.getElementById("question-page")
 var endPage = document.getElementById("end-page")
 var highScorePage = document.getElementById("high-score-page")
 var currentQuestion = document.getElementById("current-question")
+var answerChoices = document.getElementById("answer-choices")
 
 var question1 = {
     questionText: "What color is the sky?",
-    choice1: "blue",
-    choice2: "red",
-    choice3: "green",
-    choice4: "purple"
+    choices:["blue","red","green","purple"],
 }
 
 
@@ -20,7 +18,19 @@ function startQuiz() {
     questionPage.style.display = "block";
     //select currentQuestion header and update content with current question
     currentQuestion.textContent = question1.questionText;
+    for (var i = 0; i < question1.choices.length; i++) {
+        var ansButton = document.createElement("button");
+        ansButton.textContent = question1.choices[i];
+        answerChoices.append(ansButton);
+    };
+        //create a button for the choice
+        //add content
+        //append to the button container
+    
+        //then clear the buttons before the next question
+    // }
 }
+
 startButton.addEventListener("click", startQuiz)
 
 //select ul with id of choices
