@@ -23,3 +23,9 @@ header div {
 #starting-page {
     text-align: center;
 }
+
+#question-page,
+#end-page,
+#high-score-page {
+    display: none;
+}

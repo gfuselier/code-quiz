@@ -1,12 +1,28 @@
 var startButton = document.getElementById("start-button")
 var startingPage = document.getElementById("starting-page")
+var questionPage = document.getElementById("question-page")
+var endPage = document.getElementById("end-page")
+var highScorePage = document.getElementById("high-score-page")
+var currentQuestion = document.getElementById("current-question")
+
+var question1 = {
+    questionText: "What color is the sky?",
+    choice1: "blue",
+    choice2: "red",
+    choice3: "green",
+    choice4: "purple"
+}
+
 
 //click a button to hide the start screen
 function startQuiz() {
-    startingPage.style.display = "none"
+    startingPage.style.display = "none";
+    questionPage.style.display = "block";
+    //select currentQuestion header and update content with current question
+    currentQuestion.textContent = question1.questionText;
 }
 startButton.addEventListener("click", startQuiz)
-//select currentQuestion header and update content with current question
+
 //select ul with id of choices
 //create 4 buttons with textcontent and value of the answer choices
 
