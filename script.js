@@ -27,6 +27,7 @@ function startQuiz() {
     for (var i = 0; i < question1.choices.length; i++) {
         var ansButton = document.createElement("button");
         ansButton.textContent = question1.choices[i];
+        // ansButton.setAttribute() 
         answerChoices.append(ansButton);
         
     };
@@ -49,3 +50,5 @@ startButton.addEventListener("click", startQuiz)
 
 
 
+//What's left? 
+//timer function, saving timer to done screen, saving initials from done form, listing stored high scores, links to hs, back, clear buttons
