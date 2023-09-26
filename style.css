@@ -1,0 +1,16 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+header h3,
+header div {
+    display: inline;
+}
+
