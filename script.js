@@ -1,3 +1,5 @@
+var startButton = document.getElementById
+
 //click a button to hide the start screen
 //select currentQuestion header and update content with current question
 //select ul with id of choices

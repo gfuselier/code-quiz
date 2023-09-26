@@ -14,3 +14,12 @@ header div {
     display: inline;
 }
 
+.card {
+    border: 5px double black;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#starting-page {
+    text-align: center;
+}
