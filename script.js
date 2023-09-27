@@ -17,25 +17,25 @@ var backButton = document.getElementById("back-button")
 var clearButton = document.getElementById("clear-button")
 
 var allQuestions = [
-    {questionText: "What color is the sky?",
-        choices: ["blue", "red", "green", "purple"],
-        correctChoice: "blue"
+    {questionText: "La la la la, la la la la, Elmo's ______?",
+        choices: ["Show", "Song", "World", "Here"],
+        correctChoice: "World"
     }, 
     {questionText: "Who is Ernie's best friend?",
         choices: ["Big-Bird", "Elmo", "Bert", "Oscar"],
         correctChoice: "Bert"
     }, 
-    {questionText: "What is the highest selling Halloween Candy each year?",
-        choices: ["Snickers", "Reese's", "Skittles", "Twinkies"],
-        correctChoice: "Reese's"
+    {questionText: "What is the name of Zoe's pet-rock?",
+        choices: ["Socko", "Rocco", "Docko", "Paco"],
+        correctChoice: "Rocco"
     }, 
-    {questionText: "Question 4",
-        choices: ["A", "B", "C", "D"],
-        correctChoice: "D"
+    {questionText: "C is for ______, that's good enough for me!",
+        choices: ["cash", "cheese", "cousin", "cookie"],
+        correctChoice: "cookie"
     }, 
-    {questionText: "Question 5",
-        choices: ["1", "2", "3", "4"],
-        correctChoice: "1"
+    {questionText: "Who lives in a trashcan?",
+        choices: ["Oscar the Grouch", "Super Grover", "Telly", "The Count"],
+        correctChoice: "Oscar the Grouch"
     }
 ]
 

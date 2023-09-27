@@ -18,10 +18,19 @@ header div {
     border: 5px double black;
     width: 50%;
     margin: 0 auto;
+    padding: 5px;
 }
 
 #starting-page {
     text-align: center;
+}
+
+#starting-page img {
+    width:100%;
+}
+
+#starting-page button {
+    margin-bottom: 10px;
 }
 
 #question-page,
