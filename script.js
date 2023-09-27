@@ -12,7 +12,9 @@ var timer;
 var scoresArr = JSON.parse(localStorage.getItem("highScores")) || []
 var scoresList = document.getElementById("scores-list")
 var submitButton = document.getElementById("submit")
-
+var header = document.getElementById("header")
+var backButton = document.getElementById("back-button")
+var clearButton = document.getElementById("clear-button")
 
 var allQuestions = [
     {questionText: "What color is the sky?",
@@ -85,6 +87,7 @@ function gameOver() {
     timerElement.textContent = timerCount;
     questionPage.style.display = "none";
     endPage.style.display = "block";
+    endPage.children[1].textContent = "Your final score is " + timerCount + "."
 }
 
 function startTimer() {
@@ -116,8 +119,10 @@ submitButton.addEventListener("click", function(event) {
     }
 
     endPage.style.display = "none";
+    header.style.display = "none";
     highScorePage.style.display = "block";
 })
+
 
 
 //What's left? 
