@@ -6,32 +6,32 @@ var highScorePage = document.getElementById("high-score-page")
 var currentQuestion = document.getElementById("current-question")
 var answerChoices = document.getElementById("answer-choices")
 var timerElement = document.getElementById("timer-count")
-var timerCount = 100
+var timerCount = 60
 var level = 0
-var timer; 
+var timer;
 var scoresArr = JSON.parse(localStorage.getItem("highScores")) || []
-
+var scoresList = document.getElementById("scores-list")
+var submitButton = document.getElementById("submit")
 
 
 var allQuestions = [
-    {
-        questionText: "What color is the sky?",
+    {questionText: "What color is the sky?",
         choices: ["blue", "red", "green", "purple"],
         correctChoice: "blue"
-    }, {
-        questionText: "Who is Ernie's best friend?",
+    }, 
+    {questionText: "Who is Ernie's best friend?",
         choices: ["Big-Bird", "Elmo", "Bert", "Oscar"],
         correctChoice: "Bert"
-    }, {
-        questionText: "What is the highest selling Halloween Candy each year?",
+    }, 
+    {questionText: "What is the highest selling Halloween Candy each year?",
         choices: ["Snickers", "Reese's", "Skittles", "Twinkies"],
         correctChoice: "Reese's"
-    }, {
-        questionText: "Question 4",
+    }, 
+    {questionText: "Question 4",
         choices: ["A", "B", "C", "D"],
         correctChoice: "D"
-    }, {
-        questionText: "Question 5",
+    }, 
+    {questionText: "Question 5",
         choices: ["1", "2", "3", "4"],
         correctChoice: "1"
     }
@@ -45,49 +45,39 @@ function startQuiz() {
     questionPage.style.display = "block";
 
     moveForward();
-
 }
 
 function moveForward() {
-    //select currentQuestion header and update content with current question
-    //select ul with id of choices
-    //create 4 buttons with textcontent and value?? of the answer choices
+
     currentQuestion.textContent = allQuestions[level].questionText;
-    // currentQuestion.textContent = allQuestions[i + 1].questionText;
+
     answerChoices.innerHTML = ""
     for (var i = 0; i < 4; i++) {
         var ansButton = document.createElement("button");
-        ansButton.textContent = allQuestions[level].choices[i]; 
+        ansButton.textContent = allQuestions[level].choices[i];
         ansButton.onclick = checkAns
         answerChoices.append(ansButton);
-
     };
-    
-
-    
 }
 
- function checkAns(event) {
+function checkAns(event) {
     var element = event.target;
-    console.log(element);
-    console.log(this);
+    
     if (element.matches("button")) {
         console.log(element.textContent);
         if (element.textContent === allQuestions[level].correctChoice) {
             console.log("correct!");
-            
         } else {
             console.log("wrong!");
             timerCount -= 10;
-            
         }
-
     }
- level++
- if (level >= allQuestions.length) {
-    console.log("Game Over")
-    gameOver();
- } else {moveForward()}
+
+    level++;
+    if (level >= allQuestions.length) {
+        console.log("Game Over")
+        gameOver();
+    } else { moveForward() }
 }
 
 function gameOver() {
@@ -95,31 +85,40 @@ function gameOver() {
     timerElement.textContent = timerCount;
     questionPage.style.display = "none";
     endPage.style.display = "block";
-    
 }
 
 function startTimer() {
-    // Sets timer
-    timer = setInterval(function() {
-      timerCount--;
-      timerElement.textContent = timerCount;
-      // Tests if time has run out
-      if (timerCount <= 0) {
-        gameOver();
-      }
+    timer = setInterval(function () {
+        timerCount--;
+        timerElement.textContent = timerCount;
+
+        if (timerCount <= 0) {
+            gameOver();
+        }
     }, 1000);
-  }
+}
+
 startButton.addEventListener("click", startQuiz)
-document.getElementById("submit").addEventListener("click", function(event){
+
+submitButton.addEventListener("click", function(event) {
     event.preventDefault();
     var playerObj = {
         initials: document.getElementById("initials").value,
         score: timerCount
     }
     scoresArr.push(playerObj);
-    localStorage.setItem("highScores",JSON.stringify(scoresArr));
+    localStorage.setItem("highScores", JSON.stringify(scoresArr));
+
+    for (i = 0; i < scoresArr.length; i++) {
+        var listElement = document.createElement("li")
+        listElement.textContent = scoresArr[i].initials + " - " + scoresArr[i].score;
+        scoresList.appendChild(listElement)
+    }
+
+    endPage.style.display = "none";
+    highScorePage.style.display = "block";
 })
 
 
 //What's left? 
-//timer function, saving timer to done screen, saving initials from done form, listing stored high scores, links to hs, back, clear buttons
+// , links to hs, back, clear buttons
