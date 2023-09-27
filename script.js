@@ -17,30 +17,35 @@ var backButton = document.getElementById("back-button")
 var clearButton = document.getElementById("clear-button")
 
 var allQuestions = [
-    {questionText: "La la la la, la la la la, Elmo's ______?",
+    {
+        questionText: "La la la la, la la la la, Elmo's ______?",
         choices: ["Show", "Song", "World", "Here"],
         correctChoice: "World"
-    }, 
-    {questionText: "Who is Ernie's best friend?",
+    },
+    {
+        questionText: "Who is Ernie's best friend?",
         choices: ["Big-Bird", "Elmo", "Bert", "Oscar"],
         correctChoice: "Bert"
-    }, 
-    {questionText: "What is the name of Zoe's pet-rock?",
+    },
+    {
+        questionText: "What is the name of Zoe's pet-rock?",
         choices: ["Socko", "Rocco", "Docko", "Paco"],
         correctChoice: "Rocco"
-    }, 
-    {questionText: "C is for ______, that's good enough for me!",
+    },
+    {
+        questionText: "C is for ______, that's good enough for me!",
         choices: ["cash", "cheese", "cousin", "cookie"],
         correctChoice: "cookie"
-    }, 
-    {questionText: "Who lives in a trashcan?",
+    },
+    {
+        questionText: "Who lives in a trashcan?",
         choices: ["Oscar the Grouch", "Super Grover", "Telly", "The Count"],
         correctChoice: "Oscar the Grouch"
     }
 ]
 
 
-//click a button to hide the start screen
+
 function startQuiz() {
     startTimer();
     startingPage.style.display = "none";
@@ -64,7 +69,7 @@ function moveForward() {
 
 function checkAns(event) {
     var element = event.target;
-    
+
     if (element.matches("button")) {
         console.log(element.textContent);
         if (element.textContent === allQuestions[level].correctChoice) {
@@ -103,7 +108,7 @@ function startTimer() {
 
 startButton.addEventListener("click", startQuiz)
 
-submitButton.addEventListener("click", function(event) {
+submitButton.addEventListener("click", function (event) {
     event.preventDefault();
     var playerObj = {
         initials: document.getElementById("initials").value,
@@ -123,7 +128,7 @@ submitButton.addEventListener("click", function(event) {
     highScorePage.style.display = "block";
 })
 
-backButton.addEventListener("click", function() {
+backButton.addEventListener("click", function () {
     location.reload();
 })
 
