@@ -123,7 +123,10 @@ submitButton.addEventListener("click", function(event) {
     highScorePage.style.display = "block";
 })
 
+backButton.addEventListener("click", function() {
+    location.reload();
+})
 
-
-//What's left? 
-// , links to hs, back, clear buttons
+clearButton.addEventListener("click", function () {
+    scoresList.innerHTML = "";
+})
